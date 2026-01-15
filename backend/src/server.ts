@@ -21,15 +21,6 @@ connectDB();
 app.use('/api/auth', authRoutes);
 app.use('/api/chat', chatRoutes);
 
-// Health check
-app.get('/api/health', (req, res) => {
-    res.json({
-        status: 'OK',
-        message: 'Server is running',
-        openRouterKeyLoaded: !!process.env.OPENROUTER_API_KEY
-    });
-});
-
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

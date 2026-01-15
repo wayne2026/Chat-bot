@@ -25,7 +25,7 @@ const Chat: React.FC<ChatProps> = ({ token, onLogout }) => {
 
     const loadHistory = async () => {
         try {
-            const response = await fetch('/api/chat/getMessageHistory', {
+            const response = await fetch('https://chat-bot-txxe.onrender.com/api/chat/getMessageHistory', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ const Chat: React.FC<ChatProps> = ({ token, onLogout }) => {
         let firstChunkReceived = false;
 
         try {
-            const response = await fetch('/api/chat/message', {
+            const response = await fetch('https://chat-bot-txxe.onrender.com/api/chat/message', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

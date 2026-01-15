@@ -18,7 +18,7 @@ const Auth: React.FC<AuthProps> = ({ onLogin }) => {
         setLoading(true);
 
         try {
-            const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
+            const endpoint = isLogin ? 'https://chat-bot-txxe.onrender.com/api/auth/login' : 'https://chat-bot-txxe.onrender.com/api/auth/register';
             const response = await fetch(endpoint, {
                 method: 'POST',
                 headers: {
