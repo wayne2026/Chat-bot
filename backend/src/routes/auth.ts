@@ -1,12 +1,12 @@
 import { Router, Response } from 'express';
 import User from '../models/User';
 import jwt from 'jsonwebtoken';
-import { authRateLimiter } from '../middleware/rateLimiter';
+
 
 const router = Router();
 
 // Register
-router.post('/register', authRateLimiter, async (req, res: Response) => {
+router.post('/register', async (req, res: Response) => {
     try {
         const { email, password } = req.body;
 
@@ -46,7 +46,7 @@ router.post('/register', authRateLimiter, async (req, res: Response) => {
 });
 
 // Login
-router.post('/login', authRateLimiter, async (req, res: Response) => {
+router.post('/login', async (req, res: Response) => {
     try {
         const { email, password } = req.body;
 
